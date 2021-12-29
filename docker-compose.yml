@@ -1,0 +1,20 @@
+version: '3'
+services:
+  rpe:
+    restart: always
+    build:
+      context: .
+    ports:
+      - 80:${PORT}
+    volumes:
+      - ./scripts/:/app/scripts/
+      - ./config.json:/app/config.json
+    env_file:
+      - .env
+  redis:
+    image: "redis:alpine"
+    restart: always
+    volumes:
+      - ./redis/redis-data:/data
+      - ./redis/redis.conf:/usr/local/etc/redis/redis.conf
+    command: "redis-server"

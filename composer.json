@@ -1,0 +1,30 @@
+{
+    "name": "rekryt/ratchet-prometheus-exporter",
+    "description": "Ratchet Prometheus Exporter",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Krupkin Sergey",
+            "email": "rekrytkw@gmail.com",
+            "homepage": "https://vk.com/krupkin.sergey"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8",
+        "promphp/prometheus_client_php": "^2.4",
+        "cboden/ratchet": "^0.4.1",
+        "vlucas/phpdotenv": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "RatchetPrometheusExporter\\": "src/"
+        }
+    },
+    "suggest": {
+        "ext-redis": "*"
+    },
+    "require-dev": {
+        "vimeo/psalm": "^4.16"
+    }
+}

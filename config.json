@@ -1,0 +1,73 @@
+{
+    "timers": [
+        {
+            "interval": 0.5,
+            "counters": [
+                {
+                    "namespace": "scripts",
+                    "name": "counter",
+                    "help": "shell script counter",
+                    "labels": ["type"],
+                    "count": {
+                        "value": "php scripts/counter.php",
+                        "labels": ["test"]
+                    }
+                }
+            ]
+        },
+        {
+            "interval": 1,
+            "counters": [
+                {
+                    "namespace": "test",
+                    "name": "some_counter",
+                    "help": "it increases",
+                    "labels": ["type"],
+                    "count": {
+                        "value": 3,
+                        "labels": ["blue"]
+                    }
+                }
+            ],
+            "gauges": [
+                {
+                    "namespace": "test",
+                    "name": "some_gauge",
+                    "help": "it sets",
+                    "labels": ["type"],
+                    "count": {
+                        "value": 2.5,
+                        "labels": ["blue"]
+                    }
+                }
+            ],
+            "histograms": [
+                {
+                    "namespace": "test",
+                    "name": "some_histogram",
+                    "help": "it some_histogram",
+                    "labels": ["type"],
+                    "buckets": [0.1, 1, 2, 3.5, 4, 5, 6, 7, 8, 9],
+                    "count": {
+                        "value": 3.5,
+                        "labels": ["blue"]
+                    }
+                }
+            ],
+            "summaries": [
+                {
+                    "namespace": "test",
+                    "name": "some_summary",
+                    "help": "it observes a sliding window",
+                    "labels": ["type"],
+                    "maxAgeSeconds": 84600,
+                    "quantiles": [0.01, 0.05, 0.5, 0.95, 0.99],
+                    "count": {
+                        "value": 5,
+                        "labels": ["blue"]
+                    }
+                }
+            ]
+        }
+    ]
+}

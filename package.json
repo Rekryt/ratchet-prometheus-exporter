@@ -1,0 +1,16 @@
+{
+    "name": "ratchet-prometheus-exporter",
+    "version": "1.0.0",
+    "description": "Ratchet Prometheus Exporter",
+    "author": "Krupkin Sergey <rekrytkw@gmail.com>",
+    "dependencies": {},
+    "devDependencies": {
+        "@prettier/plugin-php": "^0.17.6",
+        "prettier": "^2.5.1"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "license": "MIT"
+}
