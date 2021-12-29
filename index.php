@@ -37,17 +37,15 @@ $socket = new SocketServer($host . ':' . $port, [], $loop);
  * Set redis options
  * @see https://github.com/promphp/prometheus_client_php#usage
  */
-Redis::setDefaultOptions(
-    [
-        'host' => $_ENV['REDIS_HOST'] ? $_ENV['REDIS_HOST'] : 'redis',
-        'port' => $_ENV['REDIS_PORT'] ? $_ENV['REDIS_PORT'] : 6379,
-        'password' => $_ENV['REDIS_PASSWORD'] ? $_ENV['REDIS_PASSWORD'] : null,
-        'database' => $_ENV['REDIS_DB'] ? $_ENV['REDIS_DB'] : 0,
-        'timeout' => 0.1, // in seconds
-        'read_timeout' => '10', // in seconds
-        'persistent_connections' => false
-    ]
-);
+Redis::setDefaultOptions([
+    'host' => $_ENV['REDIS_HOST'] ? $_ENV['REDIS_HOST'] : 'redis',
+    'port' => $_ENV['REDIS_PORT'] ? $_ENV['REDIS_PORT'] : 6379,
+    'password' => $_ENV['REDIS_PASSWORD'] ? $_ENV['REDIS_PASSWORD'] : null,
+    'database' => $_ENV['REDIS_DB'] ? $_ENV['REDIS_DB'] : 0,
+    'timeout' => 0.1, // in seconds
+    'read_timeout' => '10', // in seconds
+    'persistent_connections' => false,
+]);
 
 $registry = new CollectorRegistry(new Redis());
 $http = new HttpServer(new HttpRegistryServer($registry));

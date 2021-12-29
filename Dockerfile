@@ -14,9 +14,6 @@ RUN docker-php-ext-install mysqli \
 	&& docker-php-ext-enable mysqli
 
 # redis
-#RUN mkdir -p /usr/src/php/php-src-master/ext/redis \
-#	&& curl -fsSL https://pecl.php.net/get/redis | tar xvz -C "/usr/src/php/php-src-master/ext/redis" --strip 1 \
-#	&& docker-php-ext-install redis
 RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis

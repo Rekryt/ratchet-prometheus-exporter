@@ -38,7 +38,14 @@ class Summary extends Register {
         array $quantiles = null,
         object $count = null
     ) {
-        $this->collector = $registry->getOrRegisterSummary($namespace, $name, $help, $labels, $maxAgeSeconds, $quantiles);
+        $this->collector = $registry->getOrRegisterSummary(
+            $namespace,
+            $name,
+            $help,
+            $labels,
+            $maxAgeSeconds,
+            $quantiles
+        );
 
         parent::__construct($registry, $namespace, $name, $help, $labels, $count);
     }

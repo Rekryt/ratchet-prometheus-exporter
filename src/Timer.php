@@ -68,9 +68,7 @@ class Timer {
                     $item->count
                 );
                 $this->counters[] = $counter;
-                $loop->addPeriodicTimer($this->interval, function (
-                    \React\EventLoop\Timer\Timer $timer
-                ) use ($counter) {
+                $loop->addPeriodicTimer($this->interval, function (\React\EventLoop\Timer\Timer $timer) use ($counter) {
                     $counter->execute($timer);
                 });
             }
@@ -92,9 +90,7 @@ class Timer {
                     $item->count
                 );
                 $this->gauges[] = $gouge;
-                $loop->addPeriodicTimer($this->interval, function (
-                    \React\EventLoop\Timer\Timer $timer
-                ) use ($gouge) {
+                $loop->addPeriodicTimer($this->interval, function (\React\EventLoop\Timer\Timer $timer) use ($gouge) {
                     $gouge->execute($timer);
                 });
             }
@@ -118,9 +114,9 @@ class Timer {
                     $item->count
                 );
                 $this->histograms[] = $histogram;
-                $loop->addPeriodicTimer($this->interval, function (
-                    \React\EventLoop\Timer\Timer $timer
-                ) use ($histogram) {
+                $loop->addPeriodicTimer($this->interval, function (\React\EventLoop\Timer\Timer $timer) use (
+                    $histogram
+                ) {
                     $histogram->execute($timer);
                 });
             }
@@ -145,9 +141,7 @@ class Timer {
                     $item->count
                 );
                 $this->summaries[] = $summary;
-                $loop->addPeriodicTimer($this->interval, function (
-                    \React\EventLoop\Timer\Timer $timer
-                ) use ($summary) {
+                $loop->addPeriodicTimer($this->interval, function (\React\EventLoop\Timer\Timer $timer) use ($summary) {
                     $summary->execute($timer);
                 });
             }
